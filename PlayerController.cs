@@ -9,10 +9,15 @@ public class PlayerController : MonoBehaviour
     private CharacterController characterController;
     private float verticalVelocity;
     private bool isGrounded;
+ 
+    private PlayerActions playerActions;
+    private GameObject nearObject;
 
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
+        playerActions = GetComponent<PlayerActions>();
+
     }
 
     private void Update()
@@ -58,22 +63,22 @@ public class PlayerController : MonoBehaviour
         // 입력 로그
         if(Input.GetKeyDown(KeyCode.F))
         {
-            PickUpItem(); // F키: 아이템 줍기
+            playerActions.PickUpItem(); // F키: 아이템 줍기
         }
 
         if(Input.GetKeyDown(KeyCode.E))
         {
-            OpenDoor(); // E키: 문 열기
+            playerActions.OpenDoor(); // E키: 문 열기
         }
 
         if(Input.GetKeyDown(KeyCode.Tab))
         {
-            OpenInventory(); // Tab: 인벤토리창 열기
+            playerActions.OpenInventory(); // Tab: 인벤토리창 열기
         }
 
         if(Input.GetMouseButton(0))
         {
-            UseItem(); // 왼쪽 마우스 버튼: 아이템 사용
+            playerActions.UseItem(); // 왼쪽 마우스 버튼: 아이템 사용
         }
     }
 
@@ -86,9 +91,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // 예비 함수 정의
-    private void PickUpItem() => Debug.Log("아이템 줍기");
-    private void OpenDoor() => Debug.Log("문 열기");
-    private void OpenInventory() => Debug.Log("인벤토리 열기");
-    private void UseItem() => Debug.Log("아이템 사용");
+    private void OnTrigerStay(Collider other)
+    {
+        if(other.tag == "Item"){
+            nearObject = other.gameObject;
+        }
+
+        if(other.tag == "Door"){
+            nearObject = other.gameObject;
+        }
+    }
+
 }
