@@ -443,11 +443,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 33765539}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &43893464 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1577757300275506773, guid: a88b878aae5ee904fb4e61f0a1ed43e7, type: 3}
-  m_PrefabInstance: {fileID: 1577757300135572850}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &43893468 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1577757300275506777, guid: a88b878aae5ee904fb4e61f0a1ed43e7, type: 3}
@@ -919,18 +914,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08516eab8293cf5488d8674455e2d2c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tile_prefabs:
-  - {fileID: 1577757300275506773, guid: a88b878aae5ee904fb4e61f0a1ed43e7, type: 3}
-  - {fileID: 5226408940272120841, guid: 67c11efdf52e6044ba1f1f400b7c9d3e, type: 3}
-  - {fileID: 8894107056914225443, guid: 14e4d4d130c28f04698561687d7ab54b, type: 3}
-  - {fileID: 1435117963105610443, guid: 7a62f2c721c7e14448a6dcbb16155ca4, type: 3}
-  - {fileID: 6491905845927266657, guid: c18bb86a09303d84a8b0d03cd3f14dfe, type: 3}
-  - {fileID: 903556564794202671, guid: 8b2e394371cb8064e818459492b38744, type: 3}
-  - {fileID: 4869974115108503221, guid: b90396fdbd44fed4f99f9a58d10e31a9, type: 3}
-  player_transform: {fileID: 681061205}
-  number_of_tile_x: 7
-  number_of_tile_z: 7
-  parent_object: {fileID: 43893464}
 --- !u!4 &233484017
 Transform:
   m_ObjectHideFlags: 0
@@ -1645,7 +1628,7 @@ Transform:
   m_GameObject: {fileID: 681061200}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.9, y: 1, z: 1.3}
+  m_LocalPosition: {x: 10, y: 0.1, z: -70}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
