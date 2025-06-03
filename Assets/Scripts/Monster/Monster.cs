@@ -183,8 +183,13 @@ public class Monster : MonoBehaviour
                 // 애니메이션 실행
                 animator.SetTrigger("AttackTrigger");
 
-                // 플레이어에게 데미지 적용
-                // player.GetComponent<PlayerHealth>().TakeDamge(10);
+                // 플레이어에게 데미지 적용 -> 검은 화면 전환 + 위치 초기화
+                var pm = player.GetComponent<player_movement>();
+                if (pm != null && ScreenFadeManager.Instance != null)
+                {
+                    ScreenFadeManager.Instance.FadeAndResetPlayer(player, pm.startPosition);
+                }
+
 
                 canAttack = false;
                 StartCoroutine(AttackCooldown()); // 공격후 쿨타임임
