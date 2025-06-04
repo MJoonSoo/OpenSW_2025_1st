@@ -10,8 +10,8 @@ public class MonsterManager : MonoBehaviour
     public List<GameObject> monsterInstance = new List<GameObject>();
 
     // 게임 시작 후 몬스터 생성 및 행동 시작 시간 (초 단위)
-    private float spawnDelay = 10f; // spawnDelay시간 지난난 후 몬스터 생성
-    private float monsterCount = 10f;
+    private float spawnDelay = 0f; // spawnDelay시간 지난난 후 몬스터 생성
+    private float monsterCount = 20f;
 
     private void Start()
     {
@@ -52,30 +52,5 @@ public class MonsterManager : MonoBehaviour
             monsterScript.ActivateMonster();
         
         }
-        // Transform randomSpawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-
-        // if (monsterInstance != null)
-        // {
-        //     // 기존 몬스터를 랜덤한 spawnpoint 위치로 이동 후 활성화화
-        //     monsterInstance.transform.position = randomSpawnPoint.position;
-        //     monsterInstance.transform.rotation = randomSpawnPoint.rotation;
-        //     monsterInstance.SetActive(true);
-        //     Debug.Log("기존 몬스터 활성화");
-        // }
-        // else
-        // {
-        //     // 새로운 몬스터 생성
-        //     monsterInstance = Instantiate(monsterPrefab, randomSpawnPoint.position, randomSpawnPoint.rotation);
-        // }   
-
-        // // Monster 스크립트를 가져오고, 플레이어 Transform 할당
-        // Monster monsterScript = monsterInstance.GetComponent<Monster>(); // 생성된 몬스터 오브젝트에서 Monster스크립트를 가져옴
-        // GameObject playerObject = GameObject.FindGameObjectWithTag("Player"); // "Player"태그가 설정된 오브젝트를 찾음음
-        // if (playerObject != null)
-        // {
-        //     monsterScript.player = playerObject.transform;
-        // }
-        // // 몬스터를 배회 상태로 활성화
-        // monsterScript.ActivateMonster();
     }
 }
