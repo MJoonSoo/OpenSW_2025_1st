@@ -112,7 +112,7 @@ public class Monster : MonoBehaviour
     private IEnumerator WanderRoutine()
     {
         // 회전 속도와 회전 각도 제한 (필요에 따라 값 조절)
-        float maxAngularDeviation = 45f;  // 현재 진행 방향 기준 ±45도 내에서 회전
+        float maxAngularDeviation = 90f;  // 현재 진행 방향 기준 ±45도 내에서 회전
 
         while (currentState == MonsterState.Wandering)
         {
