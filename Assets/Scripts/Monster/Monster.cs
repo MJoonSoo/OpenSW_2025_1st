@@ -16,8 +16,8 @@ public class Monster : MonoBehaviour
     public Transform player;
 
     // 이동속도 설정
-    float wanderSpeed = 1.0f;       // 배회할 때 이동속도
-    float chaseSpeed = 2.0f;        // 추격할 때 이동속도
+    float wanderSpeed = 3.0f;       // 배회할 때 이동속도
+    float chaseSpeed = 4.0f;        // 추격할 때 이동속도
     float rotationSpeed = 5.0f;     // 회전 속도
     float chaseDistance = 5f;      // 추격 시작 거리
     float attackRange = 2f;       // 공격 거리

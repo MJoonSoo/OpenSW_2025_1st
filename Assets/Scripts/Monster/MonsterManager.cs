@@ -11,7 +11,7 @@ public class MonsterManager : MonoBehaviour
 
     // 게임 시작 후 몬스터 생성 및 행동 시작 시간 (초 단위)
     private float spawnDelay = 0f; // spawnDelay시간 지난난 후 몬스터 생성
-    private float monsterCount = 20f;
+    private float monsterCount = 40f;
 
     private void Start()
     {
