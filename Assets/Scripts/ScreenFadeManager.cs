@@ -59,4 +59,32 @@ public class ScreenFadeManager : MonoBehaviour
         color.a = targetAlpha;
         blackOverlay.color = color;
     }
+
+
+    public void FadeToSuccessAndExit(CanvasGroup successGroup)
+    {
+        StartCoroutine(FadeToSuccessRoutine(successGroup));
+    }
+
+    private IEnumerator FadeToSuccessRoutine(CanvasGroup successGroup)
+    {
+        yield return StartCoroutine(FadeToAlpha(1f));
+
+        // 성공 이미지 표시
+        successGroup.gameObject.SetActive(true);
+        successGroup.alpha = 1f;
+        successGroup.blocksRaycasts = true;
+        Debug.Log("2. 이미지 표시");
+        Debug.Log("3. 대기시작");
+        // 10초 대기
+        yield return new WaitForSeconds(5f);
+        Debug.Log("4. 대기 종료");
+        // 게임 종료
+        Application.Quit();
+
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+    }
 }
+
